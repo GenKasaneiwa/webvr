@@ -4,19 +4,38 @@
 <meta charset="utf-8">
 <title>Hello, WebVR! A-Frame</title>
 <meta name="description" content="Hello, WebVR!">
-<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.0/aframe-master.min.js"></script>
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.8.6/dist/aframe-extras.min.js"></script>
 </head>
 <body>
-<a-scene>
-	<a-box color="red" rotation="0 45 45" scale="2 2 2" data_liveedit_tagid="0x00007f81f7a86e30" position="1.01 3.7278145755188685 -14.178448839194086" material="" geometry=""><a-sphere position="1 0 3"></a-sphere></a-box>
-  <a-assets>
+<a-scene physics="debug: true">
+	 <a-assets>
     <a-asset-item id="dragon" src="image/dragon.obj" ></a-asset-item>
     <!-- <a-asset-item id="" src="" ></a-asset-item> --> 
-    <img id="sky" src="image/sky.jpg" > </a-assets>
-  <a-sky src="#sky"></a-sky>
-  <a-camera position="0 1 0.3512280337736229" cursor-visible="true" cursor-scale="2" cursor-color="#0095DD" cursor-opacity="0.5" rotation="26.356058576017876 35.75256641616336 0" camera="active:false" look-controls="" wasd-controls="" data-aframe-inspector-original-camera=""> </a-camera>
-  <a-cube
+    <img id="sky" src="image/sky.jpg" >
+	</a-assets>
+	
+
+	<!-- Camera -->
+ <a-entity
+      id="player"
+      camera="user-height: 1.6"
+      universal-controls
+      kinematic-body
+      listener
+      position: "0 9 0"
+    ></a-entity>
+	
+<a-sky src="#sky"></a-sky>
+
+	<!-- Floor -->
+   <a-plane rotation="-90 0 0" width="54" height="54" color="#e2c5c9" 
+   static-body></a-plane>
+	
+	<a-plane width="54" height="54" color="#e2c5c9" static-body="sphereRadius:NaN" data_liveedit_tagid="0x00007fa185608ed0" position="0 6.151 -11.058"></a-plane>
+	
+	
+  <a-cube 
   color="#0095DD"
   rotation="20 40 0"
   position="0 1 0">
@@ -37,6 +56,7 @@
     easing="linear">
   </a-animation>
   </a-cube>
+	
   <a-entity id="reddragon" obj-model="obj:image/dragon.obj" material="color:red;roughness:0.1;metalness:0.3" scale="20 20 20" position="0.12235439660896108 -1.090580189991615 -19.815604530555994" rotation="10 0 0">
     <a-animation
     attribute="rotation"
@@ -47,7 +67,7 @@
     repeat="indefinite"
     easing="ease"> </a-animation>
   </a-entity>
-	<a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+		
 </a-scene>
 </body>
 </html>
