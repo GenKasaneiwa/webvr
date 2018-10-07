@@ -5,14 +5,26 @@
 <title>Hello, WebVR! A-Frame</title>
 <meta name="description" content="Hello, WebVR!">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.0/aframe-master.min.js"></script>
-  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.8.6/dist/aframe-extras.min.js"></script>
+<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.8.6/dist/aframe-extras.min.js"></script>
+	
+	
 </head>
 <body>
 <a-scene physics="debug: true">
-	 <a-assets>
+	<a-assets>
     <a-asset-item id="dragon" src="image/dragon.obj" ></a-asset-item>
     <!-- <a-asset-item id="" src="" ></a-asset-item> --> 
     <img id="sky" src="image/sky.jpg" >
+	<img id="floor" src="image/floor.jpg" >
+	<img id="art1" src="image/art1.jpg" >
+		<img id="wood" src="image/wood.jpg" >
+<img id="art" src="image/art.jpg" >
+		<img id="art2" src="image/art2.jpg" >
+		<img id="art3" src="image/art3.jpg" >
+		<img id="art4" src="image/art4.jpg" >
+		<img id="art5" src="image/art5.jpg" >
+		<img id="art6" src="image/art6.jpg" >
+		
 	</a-assets>
 	
 
@@ -24,49 +36,43 @@
       kinematic-body
       listener
       position: "0 9 0"
+	  speed="10"
     ></a-entity>
+	
+	
+
+	
 	
 <a-sky src="#sky"></a-sky>
 
-	<!-- Floor -->
-   <a-plane rotation="-90 0 0" width="54" height="54" color="#e2c5c9" 
-   static-body></a-plane>
 	
-	<a-plane width="54" height="54" color="#e2c5c9" static-body="sphereRadius:NaN" data_liveedit_tagid="0x00007fa185608ed0" position="0 6.151 -11.058"></a-plane>
+<!-- Floor -->
+<a-image src="#wood" width="54" height="54" rotation="-90 0 90" static-body="sphereRadius:NaN" data_liveedit_tagid="0x00007fa186c9ab50" scale="2 1 1"></a-image>
+<!-- Left wall -->
+<a-image src="#floor" width="54" height="54" rotation="0 90 0" static-body="sphereRadius:NaN" position="-13.745 3.559 0" scale="2 0.5 1" data_liveedit_tagid="0x00007fa185614fd0"></a-image>
+<!-- Right wall -->
+<a-image src="#floor" width="54" height="54" rotation="0 90 0" static-body="sphereRadius:NaN" position="22.367 3.559 0" scale="2 0.5 1" data_liveedit_tagid="0x00007fa18560b410"></a-image>
+<!-- Ceiling -->
+<a-image src="#floor" width="54" height="54" rotation="90 90 0" static-body="sphereRadius:NaN" position="-1.839 13.68 0" data_liveedit_tagid="0x00007fa186ca7100" scale="2 1 1"></a-image>
+<!-- inermost wall -->
+<a-image src="#floor" width="54" height="54" static-body="sphereRadius:NaN" position="3.093 3.346 -12.585" data_liveedit_tagid="0x00007fa186ca7100"></a-image>
+<!-- artworks -->
+<a-image src="#art1" width="4" height="4" static-body="sphereRadius:NaN" position="0.035 6.879 -12.414" data_liveedit_tagid="0x00007fa186ca7100" scale="2.5 2.5 2.5">
 	
+<a-image src="#art2" width="4" height="4" static-body="sphereRadius:NaN" position="4.856 -0.025 0.065" data_liveedit_tagid="0x00007fa186ca7100" scale="0.8 1 0.5">
 	
-  <a-cube 
-  color="#0095DD"
-  rotation="20 40 0"
-  position="0 1 0">
-    <a-animation
-    attribute="rotation"
-    from="20 0 0"
-    to="20 360 0"
-    direction="alternate"
-    dur="4000"
-    repeat="indefinite"
-    easing="ease"> </a-animation>
-	<a-animation
-    attribute="scale"
-    to="1 0.5 1"
-    direction="alternate"
-    dur="2000"
-    repeat="indefinite"
-    easing="linear">
+<a-image src="#art4" width="4" height="4" static-body="sphereRadius:NaN" position="-12.93 -0.077 29.411" data_liveedit_tagid="0x00007fa186ca7100" scale="3 1 0.5" rotation="0 90 0">
+	
+
+<a-box color="tomato" depth="2" height="4" width="0.5" data_liveedit_tagid="0x00007fa18560e360" position="-7 0.06 8.9" material="color:#e6eaec;opacity:0.5" static-body>
+	  <a-animation attribute="position" from="-7 -0.7 8.9" to="-4 -0.7 34"  dur="10000" repeat="indefinite">
   </a-animation>
-  </a-cube>
-	
-  <a-entity id="reddragon" obj-model="obj:image/dragon.obj" material="color:red;roughness:0.1;metalness:0.3" scale="20 20 20" position="0.12235439660896108 -1.090580189991615 -19.815604530555994" rotation="10 0 0">
-    <a-animation
-    attribute="rotation"
-    from="20 0 0"
-    to="20 360 0"
-    direction="alternate"
-    dur="4000"
-    repeat="indefinite"
-    easing="ease"> </a-animation>
+	</a-box>
+
+ <a-entity id="reddragon" obj-model="obj:image/dragon.obj" material="color:red;metalness:0.3;roughness:0.1" scale="100 100 100" position="-55.886 -172.832 111.959" rotation="20 183.86007358464622 0" data_liveedit_tagid="0x00007fa186ca61a0">
+    <a-animation attribute="rotation" from="20 0 0" to="20 360 0" direction="alternate" dur="4000" repeat="indefinite" easing="ease" data_liveedit_tagid="0x00007fa186ca62d0"> </a-animation>
   </a-entity>
+
 		
 </a-scene>
 </body>
