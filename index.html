@@ -8,11 +8,52 @@
   </head>
   <body>
  <a-scene>
- <a-assets>
-   <a-asset-item id="dragon" src="image/dragon.obj" ></a-asset-item>
+	<a-assets>
+	<a-asset-item id="dragon" src="image/dragon.obj" ></a-asset-item>
 	<!-- <a-asset-item id="" src="" ></a-asset-item> -->
- </a-assets>			
-<a-entity obj-model="obj:#dragon"  scale="400 400 400" position="0 0 -300"></a-entity>						 
+	<img id="sky" src="image/sky.jpg" >
+	
+ 	</a-assets>
+	 
+	 
+<a-sky src="#sky"></a-sky>
+	 
+<a-camera position="0 1 0.3512280337736229" cursor-visible="true" cursor-scale="2" cursor-color="#0095DD" cursor-opacity="0.5" rotation="26.356058576017876 35.75256641616336 0" camera="active:false" look-controls="" wasd-controls="" data-aframe-inspector-original-camera="">
+</a-camera>
+	
+
+	 
+	 <a-cube
+  color="#0095DD"
+  rotation="20 40 0"
+  position="0 1 0">
+  <a-animation
+    attribute="rotation"
+    from="20 0 0"
+    to="20 360 0"
+    direction="alternate"
+    dur="4000"
+    repeat="indefinite"
+    easing="ease">
+  </a-animation>
+</a-cube>
+	 
+<a-entity id="reddragon" obj-model="obj:image/dragon.obj" material="color:red;roughness:0.1;metalness:0.3" scale="20 20 20" position="0.12235439660896108 -1.090580189991615 -19.815604530555994" rotation="10 0 0">
+	<a-animation
+    attribute="rotation"
+    from="20 0 0"
+    to="20 360 0"
+    direction="alternate"
+    dur="4000"
+    repeat="indefinite"
+    easing="ease">
+  </a-animation>
+</a-entity>
+	 
+					 
 </a-scene>
+	  
 	</body>
 </html>
+
+
