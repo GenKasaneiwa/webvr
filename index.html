@@ -8,10 +8,21 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.0/aframe-master.min.js"></script>
 	<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.8.6/dist/aframe-extras.min.js"></script>
 	<script src="https://rawgit.com/gasolin/aframe-href-component/master/dist/aframe-href-component.min.js"></script>
-
+	
 	</head>
+		
 	<body>
+		
 	<a-scene physics="debug: true">
+	<script>
+	var linkElements = document.getElementsByClassName("link-object");
+	for (var i = 0; i < linkElements.length; i++) {
+		linkElements[i].addEventListener('click', function() {
+			var link = this.getAttribute('data-link');
+			location.href = link;
+		}, false);
+	}
+</script>
 	  <a-assets>
 		  <a-asset-item id="dragon" src="image/dragon.obj" ></a-asset-item>
 		  <!-- <a-asset-item id="" src="" ></a-asset-item> --> 
@@ -61,7 +72,7 @@
 		  listener
 		  speed="200"
 		>
-		  <a-cursor material="opacity: 0.0; transparent: true" alpha-test="0.5"  fuse="true" fuse-timeout="7000">
+		  <a-cursor material="opacity: 0.0; transparent: true" alpha-test="0.5"  fuse="true" fuse-timeout="3000">
 		  </a-cursor>
 		</a-entity>
 		
@@ -201,7 +212,7 @@
 		<!-- link -->
 	<!--<a-sphere class="sample-obj" src="#boxTexture" position="1.013 3.88 14.195" rotation="14.55312799632291 79.41195040513209 179.5076772144869" scale="3.895 3.674 2.917" geometry="primitive:torusKnot" href="https://photosku.com/archives/2127/"></a-sphere>-->
   
-
+<a-entity class="link-object" data-link="https://magnets.jp" geometry="primitive: plane; width: 2.5" position="-2 1.5 -2" material="shader: html; target: #element" rotation="0 -2 0"></a-entity>
     
 	
 		
