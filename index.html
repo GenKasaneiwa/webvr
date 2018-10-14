@@ -1,79 +1,201 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Hello, WebVR! A-Frame</title>
-<meta name="description" content="Hello, WebVR!">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.0/aframe-master.min.js"></script>
-<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.8.6/dist/aframe-extras.min.js"></script>
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Hello, WebVR! A-Frame</title>
+	<meta name="description" content="Hello, WebVR!">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.0/aframe-master.min.js"></script>
+	<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.8.6/dist/aframe-extras.min.js"></script>
+	</head>
+	<body>
+	<a-scene physics="debug: true">
+	  <a-assets>
+		  <a-asset-item id="dragon" src="image/dragon.obj" ></a-asset-item>
+		  <!-- <a-asset-item id="" src="" ></a-asset-item> --> 
+		  <img id="sky" src="image/sky.jpg" >
+		  <img id="wall" src="image/wall.jpg" >
+		  <img id="floor" src="image/floor.jpg" >
+		  <img id="guide" src="image/guide.png" >
+		  <img id="statement" src="image/statement.jpg" >
+		  <img id="profile" src="image/profile.png" >
+		  <img id="cv" src="image/cv.png" >
+		  <img id="text_memoryofmyself" src="image/text_memoryofmyself.png" >
+		  <img id="text_shinboku" src="image/text_shinboku.png" >
+		  <img id="text_distortion" src="image/text_distortion.png" >
+		  <img id="text_invert" src="image/text_invert.png" >
+		  <img id="text_upsidedown" src="image/text_upsidedown.png" >
+		  <img id="text_eco" src="image/text_eco.png" >
+		  <img id="memoryofmyself1" src="image/memoryofmyself1.png" >
+		  <img id="memoryofmyself2" src="image/memoryofmyself2.jpg" >
+		  <img id="shinboku1" src="image/shinboku1.png" >
+		  <img id="distortion1" src="image/distortion1.png" >
+		  <img id="upsidedown1" src="image/upsidedown1.png" >
+		  <img id="eco1" src="image/eco1.jpg" >
+		  <img id="invert1" src="image/invert1.png" >
+		  <img id="ceiling" src="image/ceiling.png" >
+		  <img id="ceiling2" src="image/ceiling2.png" >
+		  <img id="sky1" src="image/sky1.jpg" >
+		  <img id="sky2" src="image/sky2.jpg" >
+		  <img id="sky3" src="image/sky3.jpg" >
+		  <img id="transparent" src="image/transparent.png" >
+		  <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg">
+		   <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay
+      preload></audio>
+		  
+		</a-assets>
+		
+		<!-- template 
+		<a-image src="#floor" width="54" height="54"  scale="1 1 1"></a-image>
+	     material="src: carpet.png; repeat: 100 20"
+		 -->
+		
+	  <!-- Camera -->
+	  <a-entity
+		  id="player"
+		  camera="user-height: 3"
+		  universal-controls
+		  kinematic-body
+		  listener
+		  speed="200"
+		>
+		  <a-cursor material="opacity: 0.0; transparent: true" alpha-test="0.5"  fuse="true" fuse-timeout="7000">
+		  </a-cursor>
+		</a-entity>
+		
+		<!-- Changing camera hight -->
+		<a-image src="#floor " alpha-test="0.5" static-body="sphereRadius:NaN" material="opacity: 0.0; transparent: true" width="54" height="54" scale="5.309 5.309 5.309" position="-1.941 1.992 46.483" rotation="90 0 0"></a-image>
+		
+		
+<!-- sky -->
+	  <a-sky src="black"></a-sky>
+<a-image src="#sky1" width="54" height="54" scale="-90.323 -73.906 -90.323" position="28.518 176.305 -73.355" rotation="90.01166961505233 0 90.01166961505233">
+		 <a-animation attribute="position" from="28.518 500 -73.716" to="28.518 500 1200" dur="100000">
+		</a-animation></a-image>
 	
 	
-</head>
-<body>
-<a-scene physics="debug: true">
-	<a-assets>
-    <a-asset-item id="dragon" src="image/dragon.obj" ></a-asset-item>
-    <!-- <a-asset-item id="" src="" ></a-asset-item> --> 
-    <img id="sky" src="image/sky.jpg" >
-	<img id="floor" src="image/floor.jpg" >
-	<img id="art1" src="image/art1.jpg" >
-		<img id="wood" src="image/wood.jpg" >
-<img id="art" src="image/art.jpg" >
-		<img id="art2" src="image/art2.jpg" >
-		<img id="art3" src="image/art3.jpg" >
-		<img id="art4" src="image/art4.jpg" >
-		<img id="art5" src="image/art5.jpg" >
-		<img id="art6" src="image/art6.jpg" >
-		<img id="awesome" src="image/awesome.jpg" >
-	</a-assets>
-	
+	  <!-- First Floor -->
+		
+		<!-- guide -->
+	<a-image src="#guide" alpha-test="0.5" width="54" height="54" scale="0.266 0.153 0.513" position="-0.046 5.765 -13.439"></a-image>
 
-	<!-- Camera -->
- <a-entity
-      id="player"
-      camera="user-height: 1.6"
-      universal-controls
-      kinematic-body
-      listener
-      position: "0 9 0"
-	  speed="10"
-    ></a-entity>
-	
-	
+		<!-- artist statement -->
+		<a-image src="#statement" alpha-test="0.5" width="54" height="54" scale="0.237 0.141 0.457" position="10.414 4.775 4.037" rotation="0 -90 0"></a-image>
 
-	
-	
-<a-sky src="#sky"></a-sky>
+	  <!-- Floor -->
+	 <a-image material="src:#floor; repeat: 20 20" width="54" height="54" rotation="-90 0 90" static-body="sphereRadius:NaN" scale="6.8 3.37 1" position="0 0 158.726"></a-image>
 
-	
-<!-- Floor -->
-<a-image src="#wood" width="54" height="54" rotation="-90 0 90" static-body="sphereRadius:NaN" scale="2 1 1"></a-image>
-<!-- Left wall -->
-<a-image src="#floor" width="54" height="54" rotation="0 90 0" static-body="sphereRadius:NaN" position="-13.745 3.559 0" scale="2 0.5 1"></a-image>
-<!-- Right wall -->
-<a-image src="#floor" width="54" height="54" rotation="0 90 0" static-body="sphereRadius:NaN" position="22.367 3.559 0" scale="2 0.5 1"></a-image>
-<!-- Ceiling -->
-<a-image src="#floor" width="54" height="54" rotation="90 90 0" static-body="sphereRadius:NaN" position="-1.839 13.68 0" scale="2 1 1"></a-image>
-<!-- inermost wall -->
-<a-image src="#floor" width="54" height="54" static-body="sphereRadius:NaN" position="3.093 3.346 -12.585"></a-image>
-<!-- artworks -->
-<a-image src="#art1" width="4" height="4" static-body="sphereRadius:NaN" position="0.035 6.879 -12.414" scale="2.5 2.5 2.5"></a-image>
-	
-<a-image src="#art2" width="4" height="4" static-body="sphereRadius:NaN" position="14.777 7.669 -12.384" scale="0.8 1 0.5"></a-image>
-	
-<a-image src="#art4" width="4" height="4" static-body="sphereRadius:NaN" position="-12.93 7.193 29.411" scale="3 1 0.5" rotation="0 90 0"></a-image>
+	  <!-- Left wall -->
+	<a-image material="src:#wall; repeat: 20 20" width="54" height="54" rotation="0 90 0" static-body="sphereRadius:NaN" position="-10.715 1 -29.477" scale="2 0.69 0.1"></a-image>
 
-<a-image src="#awesome" width="4" height="4" static-body="sphereRadius:NaN" position="4.842 5.728 29.411" scale="5 2 0.5" rotation="0 90 0" data_liveedit_tagid="0x00007fa1856112b0"></a-image>
+	  <!-- Right wall -->
 
-<a-box color="tomato" depth="2" height="4" width="0.5" position="-7 0.06 8.9" material="color:#e6eaec;opacity:0.5" static-body>
-	  <a-animation attribute="position" from="-7 -0.7 8.9" to="-4 -0.7 34"  dur="10000" repeat="indefinite">
-  </a-animation>
-	</a-box>
+		<a-image material="src:#wall; repeat: 20 20" width="54" height="54" rotation="0 90 0" static-body="sphereRadius:NaN" position="10.562 1 -11.256" scale="-1.34 0.69 0.1"></a-image>
 
- <a-entity id="reddragon" obj-model="obj:image/dragon.obj" material="color:red;metalness:0.3;roughness:0.1" scale="100 100 100" position="-55.886 -172.832 111.959" rotation="20 183.86007358464622 0">
-    <a-animation attribute="rotation" from="20 0 0" to="20 360 0" direction="alternate" dur="4000" repeat="indefinite" easing="ease"> </a-animation>
-  </a-entity>
+	  <!-- Ceiling -->
+	 <a-image src="#ceiling" width="54" height="54" rotation="90.01166961505233 90.01166961505233 0" position="3.215 19 55.43" scale="1.397 1.524 -10.782"></a-image>
+	  <a-image src="#ceiling2"  width="54" height="54" rotation="90 90 0"  position="-1.839 19 -33.201" scale="2 1 0.1"></a-image>
 
+	  <!-- inermost wall -->
+	  <a-image material="src: #wall; repeat:20 20" width="54" height="54" rotation="0 179.565 0" static-body="sphereRadius:NaN" position="-8.965 -0.845 -13.744" scale="2.342 0.808 0.117"></a-image>
+	  <!-- artworks -->
+		<!-- profile photo -->
+	<a-image src="#profile" width="54" height="54" scale="0.114 0.166 1" position="10.414 5.275 15.995" rotation="0 -90 0"></a-image>
+		<!-- cv -->
+	<a-image src="#cv" width="54" height="54" scale="0.547 0.051 0.483" position="-10.701 4.062 7.934" rotation="0 90 0"></a-image>
+
+
+<!-- main room -->
+		<!-- pillar -->
+<a-box material="src: #wall; repeat:20 20" depth="2" height="4" width="0.5" position="-10.923 -7.178 24.648" scale="3.092 13.251 0.79" material="" geometry=""></a-box>
+		<a-box src="#wall" depth="2" height="4" width="0.5" position="10.585 -7.178 24.788" scale="3.092 13.251 0.79"></a-box>
+		
+		<!-- left short upper wall-->
+<a-image material="src: #wall; repeat:20 20" width="54" height="54" static-body="sphereRadius:NaN" position="-33.807 1 24.634" scale="0.859 0.69 0.1"></a-image>
+				<!-- right short upper wall-->
+<a-image material="src: #wall; repeat:20 20" width="54" height="54" static-body="sphereRadius:NaN" position="33.703 1 24.634" scale="0.859 0.69 0.1"></a-image>
+		<!-- left middle wall-->
+       <a-image material="src: #wall; repeat:20 20" width="54" height="54" rotation="0 90.012 0" static-body="sphereRadius:NaN" position="-37.841 1 95.682" scale="3.383 0.69 0.1"></a-image>
+		<!-- right middle wall-->
+	<a-image material="src: #wall; repeat:20 20" width="54" height="54" rotation="0 90.012 0" static-body="sphereRadius:NaN" position="38.996 1 95.682" scale="3.383 0.69 0.1"></a-image>
+		<!-- left short bottom wall-->
+<a-image material="src: #wall; repeat:20 20" width="54" height="54" static-body="sphereRadius:NaN" position="-2.245 1 86.836" scale="-1.897 0.69 0.1"></a-image>
+		<!-- right short bottom wall-->
+<a-image material="src: #wall; repeat:20 20"  width="54" height="54" static-body="sphereRadius:NaN" position="72.89 1 85.613" scale="0.859 0.69 0.1"></a-image>
+
+		
+		<!-- artworks main room increasing z will go to south-->
+		<!-- memory of myself -->
+		<a-image src="#memoryofmyself1" width="54" height="54" scale="0.266 0.177 -2.825" position="19.032 7.634 24.796" material="opacity:100">
+		<!--<a-animation begin="mouseenter" fill="backwards" attribute="visible" from="100" to="0" dur="5000" repeat="0">
+		</a-animation>-->
+		</a-image>
+		<!--
+		<a-image src="#memoryofmyself2" width="54" height="54" scale="0.266 0.177 -2.825" position="19.032 7.634 25" material="opacity:100">
+		<!-- text memory of myself -->	
+
+　　　　　<a-image src="#text_memoryofmyself" width="54" height="54" scale="0.222 0.048 -9.486" position="31.311 4.203 24.804"></a-image>
+		
+		<!-- Invert -->
+		<a-image src="#invert1" width="54" height="54" scale="0.702 0.446 22.451" position="38.874 8.054 38.691" rotation="0 -90 0"></a-image>
+		<a-image src="#text_invert" width="54" height="54" scale="0.209 0.044 0.207" position="38.871 5.004 46.554" rotation="0 -90 0"></a-image>
+		
+		<!-- distortion -->
+		<a-image src="#distortion1" width="54" height="54" scale="0.469 0.338 -10.41" position="-37.56 8.635 35.844" rotation="0 90 0"></a-image>
+		<a-image src="#text_distortion" width="54" height="54" scale="0.407 0.047 0.292" position="-37.348 4.656 52.993" rotation="0 90 0"></a-image>
+		
+		<!-- upsidedown -->
+		<a-image src="#upsidedown1" width="54" height="54" scale="0.313 0.229 0.313" position="38.497 8.78 61.394" rotation="0 -90.01166961505233 0"></a-image>
+		<a-image src="#text_upsidedown" width="54" height="54" scale="0.202 0.031 0.202" position="38.607 4.454 77.101" rotation="0 -90 0"></a-image>
+		<!-- shinboku -->
+		<a-image src="#shinboku1" width="54" height="54" scale="0.411 0.28 0.411" position="-37.462 9.049 77.694" rotation="0 90 0"></a-image>
+		<a-image src="#text_shinboku" width="54" height="54" scale="0.337 0.052 -0.478" position="-37.369 8.877 59.964" rotation="0 90 0"></a-image>
+
+		<!-- eco -->
+		<a-image src="#eco1" width="54" height="54" scale="0.274 0.176 0.274" position="-22.907 9.151 24.788"></a-image>
+		<a-image src="#text_eco" width="54" height="54" scale="0.216 0.024 0.257" position="-24.109 2.758 24.865"></a-image>
+		
+		
+		<!-- moving objects -->
+		
+<a-box src="#boxTexture" position="7.855 6 -12.721" rotation="0 45 45" scale="2 2 2">
+    <a-animation attribute="position" to="7.855 6.2 -12.721" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
+  </a-box>
+		<a-box src="#boxTexture" position="-7.907 3.962 -7.74" rotation="31.51267873219528 55.86338502525526 82.56321827835163" scale="2 2 2">
+    <a-animation attribute="position" to="-7.907 4.5 -7.74" direction="alternate" dur="2500" repeat="indefinite"></a-animation>
+  </a-box>
+		
+<a-box src="#boxTexture" position="0.241 11.4 -9.621" rotation="15.47 -141.692 68.698" scale="2 2 2">
+    <a-animation attribute="position" to="0.241 14.7  -9.621" direction="alternate" dur="4000" repeat="indefinite"></a-animation>
+  </a-box>
+		
+<a-octahedron src="#boxTexture" position="-4.923 9.448 8.65" rotation="31.51267873219528 55.86338502525526 82.56321827835163" scale="2 2 2">
+    <a-animation attribute="position" to="-4.923 11 8.65" direction="alternate" dur="2600" repeat="indefinite"></a-animation>
+  </a-octahedron>
+
+	<a-octahedron src="#boxTexture" position="6.138 10.009 20.754" rotation="31.513 55.863 82.563" scale="2 2 2" geometry="primitive:dodecahedron">
+    <a-animation attribute="position" to="6.138 10.5 20.754" direction="alternate" dur="2200" repeat="indefinite"></a-animation>
+  </a-octahedron>
+		
+		<a-sphere src="#boxTexture" position="1.199 10.255 54.369" rotation="31.513 55.863 82.563" scale="2 2 2">
+    <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" direction="alternate" repeat="indefinite"></a-animation>
+  </a-sphere>
+		
+<a-sphere src="#boxTexture" position="1.199 10.255 54.369" rotation="5.386 308.019 14.111" scale="3.895 3.674 2.917" geometry="primitive:torusKnot">
+    <a-animation attribute="rotation" dur="10000" fill="forwards" to="360 0 360" direction="alternate" repeat="indefinite"></a-animation>
+  </a-sphere>
+	<a-sphere src="#boxTexture" position="1.199 10.255 54.369" rotation="14.55312799632291 79.41195040513209 179.5076772144869" scale="3.895 3.674 2.917" geometry="primitive:torusKnot">
+    <a-animation attribute="rotation" dur="10000" fill="forwards" to="360 0 360" direction="alternate" repeat="indefinite"></a-animation>
+  </a-sphere>
+		
+	<a-sphere src="#boxTexture" position="1.199 10.255 54.369" rotation="14.55312799632291 79.41195040513209 179.5076772144869" scale="3.895 3.674 2.917" geometry="primitive:torusKnot">
+    <a-animation attribute="rotation" dur="10000" fill="forwards" to="360 0 360" direction="alternate" repeat="indefinite"></a-animation>
+  </a-sphere>
+		
+		<!-- sound -->
+		
+	<a-sound src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay="true" position="-3 4.782 40.122"></a-sound>
+		
 		
 </a-scene>
 </body>
