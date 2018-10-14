@@ -14,14 +14,14 @@
 	<body>
 		
 	<a-scene physics="debug: true">
-	<script>
+	<!-- link doent work  <script>
 	var linkElements = document.getElementsByClassName("link-object");
 	for (var i = 0; i < linkElements.length; i++) {
 		linkElements[i].addEventListener('click', function() {
 			var link = this.getAttribute('data-link');
 			location.href = link;
 		}, false);
-	}
+	} -->
 </script>
 	  <a-assets>
 		  <a-asset-item id="dragon" src="image/dragon.obj" ></a-asset-item>
@@ -210,9 +210,9 @@
 	<a-sound src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay="true" position="-3 4.782 40.122"></a-sound>
 		
 		<!-- link -->
-	<!--<a-sphere class="sample-obj" src="#boxTexture" position="1.013 3.88 14.195" rotation="14.55312799632291 79.41195040513209 179.5076772144869" scale="3.895 3.674 2.917" geometry="primitive:torusKnot" href="https://photosku.com/archives/2127/"></a-sphere>-->
+	<!--<a-sphere class="sample-obj" src="#boxTexture" position="1.013 3.88 14.195" rotation="14.55312799632291 79.41195040513209 179.5076772144869" scale="3.895 3.674 2.917" geometry="primitive:torusKnot" href="https://photosku.com/archives/2127/">
   
-<a-entity class="link-object" data-link="https://magnets.jp" geometry="primitive: plane; width: 2.5" position="-2 1.5 -2" material="shader: html; target: #element" rotation="0 -2 0"></a-entity>
+<a-entity class="link-object" data-link="https://magnets.jp" geometry="primitive: plane; width: 2.5" position="-2 1.5 -2" material="shader: html; target: #element" rotation="0 -2 0"></a-entity></a-sphere>-->
     
 	
 		
