@@ -7,20 +7,22 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.0/aframe-master.min.js"></script>
 	<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.8.6/dist/aframe-extras.min.js"></script>
-	  <script src="https://rawgit.com/gasolin/aframe-href-component/master/dist/aframe-href-component.min.js"></script>
+
 	</head>
-		
+			<!--for link-->
+		<script>
+  AFRAME.registerComponent("mylink", {
+    init: function() {
+    this.el.addEventListener("click", (e)=> {
+          window.location = this.data.href;
+    })
+    }
+  })
+</script>
 	<body>
 		
 	<a-scene physics="debug: true">
-	<!-- link doent work  <script>
-	var linkElements = document.getElementsByClassName("link-object");
-	for (var i = 0; i < linkElements.length; i++) {
-		linkElements[i].addEventListener('click', function() {
-			var link = this.getAttribute('data-link');
-			location.href = link;
-		}, false);
-	} -->
+
 	  <a-assets>
 		  <img id="sky" src="image/sky.jpg" >
 		  <img id="wall" src="image/wall.jpg" >
@@ -69,7 +71,8 @@
 		  listener
 		  speed="200"
 		>
-		<a-cursor material="opacity: 0.0; transparent: true" alpha-test="0.5"fuse="true" fuse-timeout="3000"></a-cursor>
+		<a-cursor material="opacity: 0.0; transparent: true" alpha-test="0.5" fuse="true" fuse-timeout="3000"></a-cursor>
+		 
 		</a-entity>
 		
 		<!-- Changing camera hight -->
@@ -207,10 +210,7 @@
 	<a-sound src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay="true" position="-3 4.782 40.122"></a-sound>
 		
 
-   	 <a-box id="orange-cube" position="0 3.5 -2" rotation="30 30 0"
-      width="2" depth="2" height="2" color="#F16745"
-      href="https://github.com/gasolin/aframe-href-component">
-		<a-animation begin="mouseenter" target="orange-cube" attribute="rotation" dur="10000" fill="forwards" to="360 0 360" direction="alternate" repeat="indefinite"></a-animation> </a-box>
+ <a-entity position="0 1.6 -2" link="highlighted: true; highlightedColor:#000000; backgroundColor: red; href: https://schatzkin.com; titleColor: black; title: Facebook;image: #boxTexture  "></a-entity>
 	
 		
 </a-scene>
