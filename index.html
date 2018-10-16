@@ -9,7 +9,7 @@
 	<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.8.6/dist/aframe-extras.min.js"></script>
 
 	</head>
-			<!--for link-->
+			<!--for link
 		<script>
   AFRAME.registerComponent("mylink", {
     init: function() {
@@ -18,7 +18,7 @@
     })
     }
   })
-</script>
+</script>-->
 	<body>
 		
 	<a-scene physics="debug: true">
@@ -53,14 +53,13 @@
 		  <img id="transparent" src="image/transparent.png" >
 		  <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg">
 		  <img id="link" src="image/link.png">
-		   <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay
-      preload repeat="indefinite"></audio>
+		   <audio src="sound/background.mp3" autoplay
+      preload loop="true"></audio>
 		  
 		</a-assets>
 		
 			<!-- sound -->
 		
-	<a-sound src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay="true" position="-3 4.782 40.122"></a-sound>
 		
 		<!-- template 
 		<a-image src="#floor" width="54" height="54"  scale="1 1 1"></a-image>
@@ -76,7 +75,7 @@
 		  listener
 		  speed="200"
 		>
-		<a-cursor material="opacity: 0.0; transparent: true" alpha-test="0.5" fuse="true" fuse-timeout="3000"></a-cursor>
+		<a-cursor material="opacity: 0.0; transparent: true" alpha-test="0.5" fuse="true" fuse-timeout="1000"></a-cursor>
 		 
 		</a-entity>
 		
@@ -93,7 +92,8 @@
 	  <!-- First Floor -->
 		
 		<!-- guide -->
-	<a-image src="#guide" alpha-test="0.5" width="54" height="54" scale="0.266 0.153 0.513" position="-0.046 5.765 -13.439"></a-image>
+	<a-image src="#guide" alpha-test="0.5" width="54" height="54" scale="0.266 0.153 0.513" position="-0.046 5.765 -13.439" >
+		</a-image>
 
 		<!-- artist statement -->
 		<a-image src="#statement" alpha-test="0.5" width="54" height="54" scale="0.237 0.141 0.457" position="10.414 4.775 4.037" rotation="0 -90 0"></a-image>
@@ -209,17 +209,38 @@
 	<a-sphere src="#boxTexture" position="1.199 10.255 54.369" rotation="14.55312799632291 79.41195040513209 179.5076772144869" scale="3.895 3.674 2.917" geometry="primitive:torusKnot">
     <a-animation attribute="rotation" dur="10000" fill="forwards" to="360 0 360" direction="alternate" repeat="indefinite"></a-animation>
   </a-sphere>
+		<!-- moving object-->
+<a-sphere src="#boxTexture" position="-5.327 10.255 65.343" rotation="41.78108200913974 73.15273919514894 193.73399408910643" scale="1.701 1.701 1.715" material="opacity:100">
+	<a-animation begin="mouseenter" attribute="position" to="11.691 500 54.369"></a-animation>
+  </a-sphere>
+	<a-sphere src="#boxTexture" position="-7.541 10.255 47.647" rotation="41.78108200913974 73.15273919514894 193.73399408910643" scale="1.701 1.701 1.715" material="opacity:100">
+	<a-animation begin="mouseenter" attribute="position" to="11.691 500 54.369"></a-animation>
+  </a-sphere>
+		<a-sphere src="#boxTexture" position="11.691 10.255 58.199" rotation="41.78108200913974 73.15273919514894 193.73399408910643" scale="1.701 1.701 1.715" material="opacity:100">
+	<a-animation begin="mouseenter" attribute="position" to="11.691 500 54.369"></a-animation>
+  </a-sphere>
+		<a-sphere src="#boxTexture" position="5.729 10.255 64.944" rotation="41.78108200913974 73.15273919514894 193.73399408910643" scale="1.701 1.701 1.715" material="opacity:100">
+	<a-animation begin="mouseenter" attribute="position" to="11.691 500 54.369"></a-animation>
+  </a-sphere>
+		<a-sphere src="#boxTexture" position="-10.953 10.255 58.676" rotation="41.78108200913974 73.15273919514894 193.73399408910643" scale="1.701 1.701 1.715" material="opacity:100">
+	<a-animation begin="mouseenter" attribute="position" to="11.691 500 54.369"></a-animation>
+  </a-sphere>
+		<a-sphere src="#boxTexture" position="7.201 10.255 46.818" rotation="41.78108200913974 73.15273919514894 193.73399408910643" scale="1.701 1.701 1.715" material="opacity:100">
+	<a-animation begin="mouseenter" attribute="position" to="11.691 500 54.369"></a-animation>
+  </a-sphere>
+		<a-sphere src="#boxTexture" position="0.54 10.255 41.966" rotation="41.781 73.153 193.734" scale="1.701 1.701 1.715" material="opacity:100">
+	<a-animation begin="mouseenter" attribute="position" to="11.691 500 54.369"></a-animation>
+  </a-sphere>
 		
-	
-	<!--	
+<!--
 
- <a-entity position="5 5.919 50" scale="3 3 3"  link="highlighted: true; highlightedColor:black; backgroundColor: black; href: http://www.facebook.com/kasaneiwa; titleColor: black; title: Facebook;image: #boxTexture  "></a-entity>
+ <a-box position="5 5.919 50" scale="3 3 3"  link="highlighted: true; highlightedColor:black; backgroundColor: black; href: http://www.facebook.com/kasaneiwa; titleColor: black; title: Facebook;image: #boxTexture  " ></a-box>
 
  <a-entity position="-10 5.919 86" scale="3 3 3" link="highlighted: true; highlightedColor:black; backgroundColor: black; href: http://www.instagram.com/genkasaneiwa_art ; titleColor: black; title: Instagram Art;image: #boxTexture  "></a-entity>
 		
  <a-entity position="-25 5.919 86" scale="3 3 3" link="highlighted: true; highlightedColor:black; backgroundColor: black; href: http://www.instagram.com/genkasaneiwa_design; titleColor: black; title: Instagram Design;image: #boxTexture  "></a-entity>
-		
--->
+		-->
+
 </a-scene>
 </body>
 </html>
